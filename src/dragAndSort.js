@@ -12,6 +12,29 @@ export default function handleDragAndDrop(arr) {
     });
   });
 
+  const getNodeItemIndex = (item, ar) => {
+    let index;
+    // eslint-disable-next-line no-plusplus
+    for (let i = 0; i < ar.length; i++) {
+      if (ar[i].textContent === item) {
+        index = i;
+        break;
+      }
+    }
+
+    return index + 1;
+  };
+
+  const getDraggedItem = () => {
+    const currUl = ul.querySelectorAll('.draggable');
+
+    arr.forEach((item) => {
+      item.index = getNodeItemIndex(item.description, currUl);
+    });
+  };
+
+  const sortArr = (arr) => arr.sort((a, b) => a.index - b.index);
+
   const getDragAfterElement = (container, y) => {
     const draggableElements = [
       ...container.querySelectorAll('.draggable:not(dragging)'),
@@ -40,5 +63,10 @@ export default function handleDragAndDrop(arr) {
     } else {
       ul.insertBefore(draggable, afterElement);
     }
+
+    getDraggedItem();
+
+    // sort array based on index
+    sortArr(arr);
   });
 }
