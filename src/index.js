@@ -11,13 +11,15 @@ const todoArr = [
 function displayTodo(arr) {
   const taskListDiv = document.querySelector('.task-list');
   const ul = document.createElement('ul');
+  ul.className = 'task-ul';
   taskListDiv.appendChild(ul);
 
   arr.forEach((e) => {
     const li = document.createElement('li');
-    li.className = 'list-item';
+    li.className = 'list-item draggable';
+    li.setAttribute('draggable', 'true');
     const checkBox = document.createElement('input');
-    checkBox.type = 'checkbox';
+    checkBox.setAttribute('type', 'checkbox');
     const label = document.createElement('label');
     const labelMenu = document.createElement('i');
     labelMenu.className = 'fas fa-ellipsis-v';
@@ -28,6 +30,8 @@ function displayTodo(arr) {
     li.appendChild(labelMenu);
     ul.appendChild(li);
   });
+
+  dragAndDrop(arr);
 }
 
 displayTodo(todoArr);
