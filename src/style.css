@@ -74,3 +74,13 @@ ul {
 .fa-ellipsis-v {
   float: right;
 }
+
+.draggable {
+  padding: 1rem;
+  background-color: white;
+  cursor: move;
+}
+
+.draggable.dragging {
+  opacity: 0.5;
+}
