@@ -9,7 +9,7 @@ const todoArr = [
   { description: 'Complete todo list project', completed: false, index: 3 },
 ];
 
-function displayTodo(arr) {
+function displayTodo(arr, actions) {
   const taskListDiv = document.querySelector('.task-list');
   const ul = document.createElement('ul');
   ul.className = 'task-ul';
@@ -22,11 +22,12 @@ function displayTodo(arr) {
     const checkBox = document.createElement('input');
     checkBox.setAttribute('type', 'checkbox');
     checkBox.checked = e.completed;
-    const tasks = { li, arr };
+    const tasks = { li, arr, actions };
     checkBox.addEventListener('click', taskComplete.bind(null, tasks));
     const label = document.createElement('label');
     const labelMenu = document.createElement('i');
     labelMenu.className = 'fas fa-ellipsis-v';
+
     label.appendChild(document.createTextNode(e.description));
     li.appendChild(checkBox);
     li.appendChild(label);
@@ -34,7 +35,14 @@ function displayTodo(arr) {
     ul.appendChild(li);
   });
 
-  dragAndDrop(arr);
+  dragAndDrop(arr, actions);
 }
+const actions = new LocalStorageActions();
+const localTodos = actions.get();
 
-displayTodo(todoArr);
+if (localTodos.length === 0) {
+  actions.add(todoArr);
+  displayTodo(todoArr, actions);
+} else {
+  displayTodo(localTodos, actions);
+}
