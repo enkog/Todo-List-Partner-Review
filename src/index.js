@@ -1,6 +1,7 @@
 import './style.css';
 import dragAndDrop from './dragAndSort.js';
 import taskComplete from './completed.js';
+import LocalStorageActions from './localStorageActions.js';
 
 const todoArr = [
   { description: 'Go to the mall', completed: false, index: 1 },
