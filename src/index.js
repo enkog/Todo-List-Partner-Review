@@ -1,4 +1,6 @@
 import './style.css';
+import dragAndDrop from './dragAndSort.js';
+import taskComplete from './completed.js';
 
 const todoArr = [
   { description: 'Go to the mall', completed: false, index: 1 },
