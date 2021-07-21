@@ -20,10 +20,12 @@ function displayTodo(arr) {
     li.setAttribute('draggable', 'true');
     const checkBox = document.createElement('input');
     checkBox.setAttribute('type', 'checkbox');
+    checkBox.checked = e.completed;
+    const tasks = { li, arr };
+    checkBox.addEventListener('click', taskComplete.bind(null, tasks));
     const label = document.createElement('label');
     const labelMenu = document.createElement('i');
     labelMenu.className = 'fas fa-ellipsis-v';
-
     label.appendChild(document.createTextNode(e.description));
     li.appendChild(checkBox);
     li.appendChild(label);
