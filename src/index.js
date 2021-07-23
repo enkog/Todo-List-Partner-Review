@@ -20,6 +20,14 @@ const editTodo = (ctx) => {
   editInput.type = 'text';
   editInput.className = 'edit-todo-input';
   editInput.value = currDesc;
+  editInput.addEventListener('keyup', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      const idx = localTodos.findIndex((todo) => todo.description === currDesc);
+      taskUtils.editTaskDesc(editInput.value, idx);
+      window.location.reload();
+    }
+  });
   li.removeChild(label);
   li.appendChild(editInput);
 };
@@ -47,7 +55,12 @@ function displayTodo(arr, actions) {
     deleteIcon.className = 'far fa-trash-alt hidden';
 
     const tasks = { li, arr, actions };
+
     checkBox.addEventListener('click', taskComplete.bind(null, tasks));
+
+    labelMenu.addEventListener('click', editTodo.bind(null, {
+      li, labelMenu, deleteIcon, label,
+    }));
 
     label.appendChild(document.createTextNode(e.description));
     li.appendChild(checkBox);
