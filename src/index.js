@@ -5,6 +5,10 @@ import LocalStorageActions from './localStorageActions.js';
 import Task from './task.js';
 import TaskUtils from './taskUtils.js';
 
+const actions = new LocalStorageActions();
+const taskUtils = new TaskUtils(actions);
+const localTodos = actions.get();
+
 function displayTodo(arr, actions) {
   const taskListDiv = document.querySelector('.task-list');
   const ul = document.createElement('ul');
@@ -33,12 +37,5 @@ function displayTodo(arr, actions) {
 
   dragAndDrop(arr, actions);
 }
-const actions = new LocalStorageActions();
-const localTodos = actions.get();
 
-if (localTodos.length === 0) {
-  actions.add(todoArr);
-  displayTodo(todoArr, actions);
-} else {
-  displayTodo(localTodos, actions);
-}
+displayTodo(localTodos, actions);
