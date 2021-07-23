@@ -113,7 +113,7 @@ function displayTodo(arr, actions) {
     li.appendChild(checkBox);
     li.appendChild(tickIcon);
     li.appendChild(label);
-    li.appendChild(labelMenu); {}
+    li.appendChild(labelMenu);
     li.appendChild(deleteIcon);
     ul.appendChild(li);
   });
