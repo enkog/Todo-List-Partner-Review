@@ -9,6 +9,21 @@ const actions = new LocalStorageActions();
 const taskUtils = new TaskUtils(actions);
 const localTodos = actions.get();
 
+const editTodo = (ctx) => {
+  const {
+    li, labelMenu, deleteIcon, label,
+  } = ctx;
+  labelMenu.classList.add('hidden');
+  deleteIcon.classList.remove('hidden');
+  const currDesc = li.textContent;
+  const editInput = document.createElement('input');
+  editInput.type = 'text';
+  editInput.className = 'edit-todo-input';
+  editInput.value = currDesc;
+  li.removeChild(label);
+  li.appendChild(editInput);
+};
+
 function displayTodo(arr, actions) {
   const taskListDiv = document.querySelector('.task-list');
   const ul = document.createElement('ul');
@@ -28,6 +43,9 @@ function displayTodo(arr, actions) {
     const labelMenu = document.createElement('i');
     labelMenu.className = 'fas fa-ellipsis-v';
 
+    const deleteIcon = document.createElement('i');
+    deleteIcon.className = 'far fa-trash-alt hidden';
+
     const tasks = { li, arr, actions };
     checkBox.addEventListener('click', taskComplete.bind(null, tasks));
 
@@ -35,6 +53,7 @@ function displayTodo(arr, actions) {
     li.appendChild(checkBox);
     li.appendChild(label);
     li.appendChild(labelMenu);
+    li.appendChild(deleteIcon);
     ul.appendChild(li);
   });
 
