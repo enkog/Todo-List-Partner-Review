@@ -50,7 +50,8 @@ ul {
   padding: 15px;
 }
 
-.add-todo-input {
+.add-todo-input,
+.edit-todo-input  {
   border: none;
   outline: none;
   border-color: transparent;
@@ -84,4 +85,8 @@ ul {
 
 .draggable.dragging {
   opacity: 0.5;
+}
+
+.hidden {
+  display: none;
 }
