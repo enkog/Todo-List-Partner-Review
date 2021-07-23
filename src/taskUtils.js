@@ -19,4 +19,14 @@ export default class TaskUtils {
     currTask.description = desc;
     this.actions.updateAll(tasks);
   }
+
+  deleteTask(index) {
+    const tasks = this.getTasks();
+    tasks.splice(index, 1);
+    // eslint-disable-next-line no-plusplus
+    for (let i = 0; i < tasks.length; i++) {
+      tasks[i].index = i + 1;
+    }
+    this.actions.updateAll(tasks);
+  }
 }
