@@ -71,7 +71,8 @@ ul {
   color: #222;
 }
 
-.fa-ellipsis-v {
+.fa-ellipsis-v,
+.fa-level-down-alt{
   float: right;
 }
 
