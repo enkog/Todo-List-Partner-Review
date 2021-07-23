@@ -51,7 +51,8 @@ ul {
 }
 
 .add-todo-input,
-.edit-todo-input  {
+.edit-todo-input {
+  padding-left: 15px;
   border: none;
   outline: none;
   border-color: transparent;
@@ -75,6 +76,7 @@ ul {
 .fa-ellipsis-v,
 .fa-trash-alt {
   float: right;
+  cursor: pointer;
 }
 
 .draggable {
@@ -89,4 +91,9 @@ ul {
 
 .hidden {
   display: none;
+}
+
+.fa-check {
+  color: rgb(36, 109, 58);
+  cursor: pointer;
 }
