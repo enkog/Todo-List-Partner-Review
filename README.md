@@ -1,22 +1,20 @@
-
 # ToDo_List
 
-This project is a simple HTML list of To Do tasks. This simple web page is built using webpack and served by a webpack dev server.
+"To-do list" is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete.
 
 
 ## Built With 
 
-- JavaScript
+- JavaScript (ES6)
 - HTML
 - CSS
 - Webpack
 - VS Code
 
-
 ##  Setup    <a name = "setup"></a>
 
-  - <code>$ git clone https://github.com/enkog/ToDo_List</code>
-  - <code>$ cd ToDo_List</code>
+  - <code>$ git clone https://github.com/enkog/Todo-List</code>
+  - <code>$ cd Todo-List</code>
   - <code>$ npm install</code>
   - <code>$ npm install --only=dev</code>
   - <code>$ npm start (for development mode)</code>
@@ -43,5 +41,6 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Microverse
+- Youtube
 
 # Todo-List
