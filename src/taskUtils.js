@@ -29,4 +29,10 @@ export default class TaskUtils {
     }
     this.actions.updateAll(tasks);
   }
+
+  clearCompleted() {
+    const localTasks = this.actions.get();
+    const tasks = localTasks.filter((task) => task.completed === false);
+    this.actions.updateAll(tasks);
+  }
 }
