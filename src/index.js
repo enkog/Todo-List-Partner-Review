@@ -3,6 +3,7 @@ import dragAndDrop from './dragAndSort.js';
 import taskComplete from './completed.js';
 import LocalStorageActions from './localStorageActions.js';
 import Task from './task.js';
+import TaskUtils from './taskUtils.js';
 
 function displayTodo(arr, actions) {
   const taskListDiv = document.querySelector('.task-list');
