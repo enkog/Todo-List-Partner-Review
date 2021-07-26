@@ -12,7 +12,7 @@
 - VS Code
 
 ## Live Demo
-[Todo-List]
+[Todo List App](https://enkog.github.io/Todo-List/)
 ##  Setup    <a name = "setup"></a>
 
   - <code>$ git clone https://github.com/enkog/Todo-List</code>
