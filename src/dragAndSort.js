@@ -69,7 +69,6 @@ export default function handleDragAndDrop(arr, actions) {
 
     getDraggedItem();
 
-    // sort array based on index
     sortArr(arr);
   });
 }

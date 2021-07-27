@@ -14,13 +14,8 @@ export default class LocalStorageActions {
 
   updateOne(item) {
     const todos = this.get();
-    // get index of item
     const index = todos.findIndex((todo) => todo.description === item.description);
-
-    // replace item at index
     todos.splice(index, 1, item);
-
-    // add todo
     this.add(todos);
   }
 
